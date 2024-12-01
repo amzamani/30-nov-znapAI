@@ -24,27 +24,28 @@ export async function getUserSubscriptionPlan(
         throw new Error("User not found")
     }
 
-    const hasPlan = user.stripePriceId &&
-        user.stripeCurrentPeriodEnd?.getTime() + 86_400_000 > Date.now()
-
-    let plan = freePlan
+    // const hasPlan = user.stripePriceId &&
+    //     user.stripeCurrentPeriodEnd?.getTime() + 86_400_000 > Date.now()
+    const hasPlan = true;
+    let plan = proPlan
     if (hasPlan) {
-        const subscription = await stripe.subscriptions.retrieve(user.stripeSubscriptionId)
+        // const subscription = await stripe.subscriptions.retrieve(user.stripeSubscriptionId)
 
-        if (subscription.plan.nickname === "Pro plan") {
-            plan = proPlan
-        } else if (subscription.plan.nickname === "Hobby plan") {
-            plan = hobbyPlan
-        } else if (subscription.plan.nickname === "Basic plan") {
-            // if subscription is created before 2024-05-01, it's a legacy plan
-            console.log(subscription.created)
-            if (subscription.created < 1717200000) {
-                plan = legacyBasicPlan
-            } else {
-                plan = basicPlan
-            }
+        // if (subscription.plan.nickname === "Pro plan") {
+        //     plan = proPlan
+        // } else if (subscription.plan.nickname === "Hobby plan") {
+        //     plan = hobbyPlan
+        // } else if (subscription.plan.nickname === "Basic plan") {
+        //     // if subscription is created before 2024-05-01, it's a legacy plan
+        //     console.log(subscription.created)
+        //     if (subscription.created < 1717200000) {
+        //         plan = legacyBasicPlan
+        //     } else {
+        //         plan = basicPlan
+        //     }
 
-        }
+        // }
+
     }
 
     return {
