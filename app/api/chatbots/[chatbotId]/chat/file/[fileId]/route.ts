@@ -2,8 +2,8 @@ import { db } from "@/lib/db";
 import { OpenAI } from "openai";
 import { z } from "zod";
 
-import { handleFileFunction } from "@openassistantgpt/assistant"
-
+// import { handleFileFunction } from "@openassistantgpt/assistant"
+import { handleFileFunction } from "openassistantgpt";
 const routeContextSchema = z.object({
     params: z.object({
         chatbotId: z.string(),

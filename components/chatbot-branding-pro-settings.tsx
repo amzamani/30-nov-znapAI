@@ -103,10 +103,10 @@ export function ChatbotBrandingProSettingsForm({ chatbot, className, ...props }:
                                 <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
                                     <div className="space-y-0.5">
                                         <FormLabel className="text-base">
-                                            OpenAssistantGPT Branding Label
+                                            ZnapAI Branding Label
                                         </FormLabel>
                                         <FormDescription>
-                                            Remove &quot;Powered by OpenAssistantGPT&quot; from the chatbot.
+                                            Remove &quot;Powered by ZnapAI&quot; from the chatbot.
                                         </FormDescription>
                                     </div>
                                     <FormControl>
