@@ -9,7 +9,7 @@ import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
 import { Background } from "@/components/background"
 import { useEffect, useState } from "react"
-import { SDKBanner } from "@/components/sdk-banner"
+// import { SDKBanner } from "@/components/sdk-banner"
 
 interface MarketingLayoutProps {
   children: React.ReactNode
@@ -40,7 +40,7 @@ export default function MarketingLayout({
         className={`z-40 ${isHeaderTransparent ? "bg-transparent" : "bg-white/75 backdrop-blur-lg border-b"
           } sticky inset-x-0 top-0 w-full transition-all duration-1000`}
       >
-        <SDKBanner />
+        {/* <SDKBanner /> */}
         <div className="container flex h-20 items-center justify-between py-6 ">
           <MainNav items={marketingConfig.mainNav} />
           <nav>
