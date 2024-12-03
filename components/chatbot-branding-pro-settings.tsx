@@ -48,7 +48,7 @@ export function ChatbotBrandingProSettingsForm({ chatbot, className, ...props }:
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                displayBranding: data.displayBranding,
+                displayBranding: !data.displayBranding,
             }),
         })
 

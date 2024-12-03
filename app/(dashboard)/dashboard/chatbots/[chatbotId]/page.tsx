@@ -87,11 +87,15 @@ export default async function ChatbotPage({ params }: ChatbotSettingsProps) {
             </DashboardHeader>
             <Tabs className="w-full" defaultValue="settings">
                 <TabsList className="mb-5 grid w-full grid-cols-5 gap-4">
+                {/* <TabsList className="mb-5 flex w-full gap-4 overflow-x-auto whitespace-nowrap"> */}
+
+               
+                {/* <TabsList className="mb-5 w-full overflow-x-auto no-scrollbar"> */}
                     <TabsTrigger value="settings">General Settings</TabsTrigger>
                     <TabsTrigger value="advancedSettings">Advanced Settings</TabsTrigger>
                     <TabsTrigger value="customizations">Customizations</TabsTrigger>
                     <TabsTrigger value="inquiry">User Inquiry Settings</TabsTrigger>
-                    <TabsTrigger value="pro">Pro features 👑</TabsTrigger>
+                    <TabsTrigger value="pro">Pro features </TabsTrigger>
                 </TabsList>
                 <TabsContent value="settings">
                     <div className="space-y-4">
@@ -143,7 +147,7 @@ export default async function ChatbotPage({ params }: ChatbotSettingsProps) {
                 </TabsContent>
                 <TabsContent value="pro">
                     <div className="space-y-4">
-                        <ChatbotBrandingProSettingsForm chatbot={chatbot} />
+                        {/* <ChatbotBrandingProSettingsForm chatbot={chatbot} /> */}
                         <ChatbotFileAttachementProSettingsForm chatbot={chatbot} />
                     </div>
                 </TabsContent>

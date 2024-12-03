@@ -32,9 +32,7 @@ export default async function SupportPage() {
                 <p className="text-lg font-semibold">How can we help you?</p>
                 <p className="text-muted-foreground">
                     First, before reaching out you can always try our chatbot. He knows a lot about our platform he might be able to help you.
-                    <br />
-                    If you still have issue with our app you can open a <a className="underline" href={siteConfig.links.github + '/issues'}>Github issue</a>, so we can help you to fix it and it will help us to improve our app.
-                </p>
+                       </p>
                 <div className="min-w-[85%] min-h-[15rem] text-left items-left pt-6">
                     <iframe
                         src="/embed/cm478imy10001ui4zdt780050/window?chatbox=false"

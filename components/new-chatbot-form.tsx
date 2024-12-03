@@ -41,7 +41,9 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
         defaultValues: {
             welcomeMessage: "Hello, how can I help you?",
             prompt: "You are an assistant you help users that visit our website, keep it short, always refer to the documentation provided and never ask for more information.",
-            chatbotErrorMessage: "Oops! An error has occurred. If the issue persists, feel free to reach out to our support team for assistance. We're here to help!"
+            chatbotErrorMessage: "Oops! An error has occurred. If the issue persists, feel free to reach out to our support team for assistance. We're here to help!",
+            modelId: "",
+            openAIKey : ""
         }
     })
 
@@ -93,66 +95,122 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
         return models
     }
 
+    // async function onSubmit(data: FormData) {
+    //     setIsSaving(true)
+    //     console.log(data)
+
+    //     const response = await fetch(`/api/chatbots`, {
+    //         method: "POST",
+    //         headers: {
+    //             "Content-Type": "application/json",
+    //         },
+    //         body: JSON.stringify({
+    //             name: data.name,
+    //             prompt: data.prompt,
+    //             openAIKey: data.openAIKey,
+    //             welcomeMessage: data.welcomeMessage,
+    //             chatbotErrorMessage: data.chatbotErrorMessage,
+    //             modelId: data.modelId,
+    //             files: data.files
+    //         }),
+    //     })
+
+    //     setIsSaving(false)
+
+    //     if (!response?.ok) {
+    //         if (response.status === 400) {
+    //             return toast({
+    //                 title: "Something went wrong.",
+    //                 description: await response.text(),
+    //                 variant: "destructive",
+    //             })
+    //         } else if (response.status === 402) {
+    //             return toast({
+    //                 title: "Chatbot limit reached.",
+    //                 description: "Please upgrade to the a higher plan.",
+    //                 variant: "destructive",
+    //             })
+    //         }
+    //         return toast({
+    //             title: "Something went wrong.",
+    //             description: "Your chatbot was not saved. Please try again.",
+    //             variant: "destructive",
+    //         })
+    //     }
+
+    //     toast({
+    //         description: "Your chatbot has been saved.",
+    //     })
+
+    //     eventGA({
+    //         action: 'chatbot_created',
+    //         label: 'Chatbot Created',
+    //         value: data.name
+    //     });
+
+    //     router.refresh()
+
+    //     if (!isOnboarding) {
+    //         const object = await response.json()
+    //         router.push(`/dashboard/chatbots/${object.chatbot.id}/chat`)
+    //     }
+    // }
     async function onSubmit(data: FormData) {
-        setIsSaving(true)
-        console.log(data)
-
-        const response = await fetch(`/api/chatbots`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                name: data.name,
-                prompt: data.prompt,
-                openAIKey: data.openAIKey,
-                welcomeMessage: data.welcomeMessage,
-                chatbotErrorMessage: data.chatbotErrorMessage,
-                modelId: data.modelId,
-                files: data.files
-            }),
-        })
-
-        setIsSaving(false)
-
-        if (!response?.ok) {
-            if (response.status === 400) {
+        setIsSaving(true);
+        console.log("Form submitted with data:", data);
+        
+    
+        try {
+            const response = await fetch(`/api/chatbots`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: data.name,
+                    prompt: data.prompt,
+                    openAIKey: data.openAIKey,
+                    welcomeMessage: data.welcomeMessage,
+                    chatbotErrorMessage: data.chatbotErrorMessage,
+                    modelId: data.modelId,
+                    files: data.files,
+                }),
+            });
+    
+            console.log("Response status:", response.status);
+    
+            if (!response.ok) {
+                const errorText = await response.text();
+                console.error("Error response:", errorText);
                 return toast({
                     title: "Something went wrong.",
-                    description: await response.text(),
+                    description: errorText,
                     variant: "destructive",
-                })
-            } else if (response.status === 402) {
-                return toast({
-                    title: "Chatbot limit reached.",
-                    description: "Please upgrade to the a higher plan.",
-                    variant: "destructive",
-                })
+                });
             }
-            return toast({
-                title: "Something went wrong.",
-                description: "Your chatbot was not saved. Please try again.",
+    
+            toast({ description: "Your chatbot has been saved." });
+            eventGA({
+                action: "chatbot_created",
+                label: "Chatbot Created",
+                value: data.name,
+            });
+    
+            const result = await response.json();
+            router.refresh();
+            if (!isOnboarding) {
+                router.push(`/dashboard/chatbots/${result.chatbot.id}/chat`);
+            }
+        } catch (error) {
+            console.error("Submission error:", error);
+            toast({
+                title: "Submission failed",
+                description: "An error occurred while saving your chatbot.",
                 variant: "destructive",
-            })
-        }
-
-        toast({
-            description: "Your chatbot has been saved.",
-        })
-
-        eventGA({
-            action: 'chatbot_created',
-            label: 'Chatbot Created',
-            value: data.name
-        });
-
-        router.refresh()
-
-        if (!isOnboarding) {
-            const object = await response.json()
-            router.push(`/dashboard/chatbots/${object.chatbot.id}/chat`)
+            });
+        } finally {
+            setIsSaving(false);
         }
     }
+    
 
     return (
         <Form {...form}>
@@ -214,7 +272,7 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
                                         id="prompt"
                                     />
                                     <FormDescription>
-                                        The prompt that will be sent to OpenAI for every messages, here&apos;s and example:
+                                        The prompt that will be sent to AI for every messages, here&apos;s and example:
                                         &quot;You are an assistant you help users that visit our website, keep it short, always refer to the documentation provided and never ask for more information.&quot;
                                     </FormDescription>
                                     <FormMessage />
@@ -242,14 +300,14 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
                                     />
 
                                     <FormDescription>
-                                        The OpenAI model will use this file to search for specific content.
-                                        If you don&apos;t have a file yet, it is because you haven&apos;t published any file.
+                                        The AI will use this file to search for specific content.
+                                        If you don&apos;t have a file yet, it is because you haven&apos;t uploaded any file.
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
                         />
-                        <FormField
+                        {/* <FormField
                             control={form.control}
                             name="modelId"
                             render={({ field }) => (
@@ -276,8 +334,8 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
                                     <FormMessage />
                                 </FormItem>
                             )}
-                        />
-                        <FormField
+                        /> */}
+                        {/* <FormField
                             control={form.control}
                             name="openAIKey"
                             render={({ field }) => (
@@ -297,7 +355,7 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
                                     <FormMessage />
                                 </FormItem>
                             )}
-                        />
+                        /> */}
                         <FormField
                             control={form.control}
                             name="chatbotErrorMessage"

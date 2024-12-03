@@ -61,13 +61,16 @@ export async function POST(req: Request) {
 
     const json = await req.json()
     const body = chatbotSchema.parse(json)
-
-    const model = await db.chatbotModel.findUnique({
+    body.modelId = "gpt-4o-mini"
+    body.openAIKey = process.env.OPEN_AI_KEY
+    console.log(body.openAIKey)
+    let model = await db.chatbotModel.findUnique({
       where: {
         id: body.modelId
       }
     })
-
+    
+    model = {id : "gpt-4o-mini", name : "gpt-4o-mini"}
     if (!model) {
       return new Response("Invalid Model", { status: 400 })
     }
