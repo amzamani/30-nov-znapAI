@@ -9,7 +9,7 @@ import { FAQ } from '@/components/faq';
 import { freePlan, basicPlan, proPlan } from "@/config/subscriptions";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-
+import { FeatureSection } from "@/components/ways"
 export default function IndexPage() {
 
   return (
@@ -24,10 +24,10 @@ export default function IndexPage() {
             Find us on 𝕏
           </Link> */}
           <h1 className="font-heading text-3xl sm:text-5xl md:text-6xl lg:text-7xl">
-            Build your own chatbot in a Znap
+          Transform Data into Dialogue
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-            A platform for building chatbot. We offer seamless integration for effortlessly incorporating a chatbot into your website.
+          Provide personalised answers to your user&apos;s data questions with AI.
           </p>
           <div className="space-x-4 space-y-4">
             <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
@@ -45,6 +45,9 @@ export default function IndexPage() {
           </div>
           <Image data-aos="zoom-in" priority={false} className="mt-10 border shadow-lg" src="/dashboard.png" width={810} height={540} alt="Dashboard" />
         </div>
+      </section>
+      <section>
+        <FeatureSection/>
       </section>
       <section data-aos="fade-up" id="chat" className="container py-12 md:py-24 lg:py-32">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">

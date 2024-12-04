@@ -24,7 +24,12 @@ export function SiteFooter({ simpleFooter, className }: SiteFooterProps) {
                 </li> */}
                 <li>
                   <Link className="text-base text-gray-500 hover:text-blue-500" href="/login">
-                    App
+                    ZnapAI
+                  </Link>
+                </li>
+                <li>
+                  <Link className="text-base text-gray-500 hover:text-blue-500" href="https://csv.askfromdata.com/">
+                    AskFromData
                   </Link>
                 </li>
               </ul>
