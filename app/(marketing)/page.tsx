@@ -31,7 +31,7 @@ export default function IndexPage() {
           </p>
           <div className="space-x-4 space-y-4">
             <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
-              <Icons.bot className="h-4 w-4 mr-2"></Icons.bot>
+              {/* <Icons.bot className="h-4 w-4 mr-2"></Icons.bot> */}
               Get Started
             </Link>
             {/* <Link

@@ -30,14 +30,14 @@ export async function PATCH(
         const body = await req.json()
         const payload = openAIConfigSchema.parse(body)
 
-        try {
-            const openai = new OpenAI({
-                apiKey: payload.globalAPIKey
-            })
-            await openai.models.list()
-        } catch (error) {
-            return new Response("Invalid OpenAI API key", { status: 400, statusText: "Invalid OpenAI API key" })
-        }
+        // try {
+        //     const openai = new OpenAI({
+        //         apiKey: payload.globalAPIKey
+        //     })
+        //     await openai.models.list()
+        // } catch (error) {
+        //     return new Response("Invalid OpenAI API key", { status: 400, statusText: "Invalid OpenAI API key" })
+        // }
 
         // Update the user.
         await db.openAIConfig.upsert({

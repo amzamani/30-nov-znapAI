@@ -42,7 +42,7 @@ export default async function SettingsPage() {
             <div className="grid gap-10">
                 <div className="grid gap-10">
                     <UserNameForm user={{ id: user.id, name: user.name || "" }} />
-                    <OpenAIForm user={{ id: user.id }} />
+                    {/* <OpenAIForm user={{ id: user.id }} /> */}
                     <NotificationSettingsForm user={{ id: user.id }} marketingEmailEnabled={userNotifications?.marketingEmailEnabled!} inquiryNotificationEnabled={userNotifications?.inquiryEmailEnabled!} />
                 </div>
             </div>

@@ -272,7 +272,7 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
                                         id="prompt"
                                     />
                                     <FormDescription>
-                                        The prompt that will be sent to AI for every messages, here&apos;s and example:
+                                        The prompt that will be sent to AI for every messages, here&apos;s an example:
                                         &quot;You are an assistant you help users that visit our website, keep it short, always refer to the documentation provided and never ask for more information.&quot;
                                     </FormDescription>
                                     <FormMessage />

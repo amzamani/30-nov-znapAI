@@ -133,7 +133,7 @@ export default async function ChatbotPage({ params }: ChatbotSettingsProps) {
                 </TabsContent>
                 <TabsContent value="advancedSettings">
                     <div className="space-y-4">
-                        <ChatbotAdvancedSettingsForm chatbot={chatbot} />
+                        {/* <ChatbotAdvancedSettingsForm chatbot={chatbot} /> */}
                         <ChatbotAdvancedSecuritySettingsForm chatbot={chatbot} />
                     </div>
                 </TabsContent>

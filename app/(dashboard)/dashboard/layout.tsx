@@ -9,6 +9,7 @@ import { db } from "@/lib/db"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { OpenAIForm } from "@/components/openai-config-form"
 import Image from "next/image"
+import { toast } from "@/components/ui/use-toast"
 
 interface DashboardLayoutProps {
     children?: React.ReactNode
@@ -17,17 +18,45 @@ interface DashboardLayoutProps {
 export default async function DashboardLayout({
     children,
 }: DashboardLayoutProps) {
-    const user = await getCurrentUser()
+    const user = await getCurrentUser();
 
     if (!user) {
-        return notFound()
+        return notFound();
     }
-
+    
+    let apiKey = process.env.OPEN_AI_KEY || "";
+    
+    // Check if the OpenAI key exists for the user
     const openAIKey = await db.openAIConfig.findFirst({
         where: {
             userId: user.id,
         },
-    })
+    });
+    
+    if (!openAIKey) {
+        try {
+            // Direct insertion into the openAIConfig table
+            await db.openAIConfig.create({
+                data: {
+                    userId: user.id,
+                    globalAPIKey: apiKey,
+                },
+            });
+    
+            toast({
+                description: "Your account has been set up.",
+            });
+        } catch (error) {
+            console.error("Error inserting OpenAI key:", error);
+    
+            toast({
+                title: "Something went wrong.",
+                description: "Please try logging out and logging in again.",
+                variant: "destructive",
+            });
+        }
+    }
+    
 
     return (
         <div className="flex min-h-screen flex-col space-y-6">
@@ -48,7 +77,7 @@ export default async function DashboardLayout({
                     <DashboardNav items={dashboardConfig.sidebarNav} />
                 </aside>
                 <main className="flex w-full flex-1 flex-col overflow-hidden">
-                    <Dialog defaultOpen={!openAIKey}>
+                    {/* <Dialog defaultOpen={!openAIKey}>
                         <DialogContent>
                             <DialogHeader>
                                 <DialogTitle>
@@ -64,7 +93,7 @@ export default async function DashboardLayout({
                                 </div>
                             </DialogHeader>
                         </DialogContent>
-                    </Dialog>
+                    </Dialog> */}
                     {children}
                 </main>
             </div>

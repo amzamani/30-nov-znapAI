@@ -190,8 +190,9 @@ export function ChatbotForm({ chatbot, currentFiles, models, files, className, .
                                         id="prompt"
                                     />
                                     <FormDescription>
-                                        This is the prompt that will be sent to OpenAI, here&apos;s and example:
-                                        &quot;You are an assistant you help users that visit our website, keep it short, always refer to the documentation provided and never ask for more information.&quot;
+                                    The prompt that will be sent to AI for every messages, here&apos;s an example: "You are an assistant you help users that visit our website, keep it short, always refer to the documentation provided and never ask for more information."
+
+
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>
@@ -218,15 +219,15 @@ export function ChatbotForm({ chatbot, currentFiles, models, files, className, .
                                     />
 
                                     <FormDescription>
-                                        The OpenAI model will use this file to search for specific content.
-                                        If you don&apos;t have a file yet, it is because you haven&apos;t published any file.
+                                    The AI will use this file to search for specific content.
+                                    If you don&apos;t have a file yet, it is because you haven&apos;t uploaded any file.
                                     </FormDescription>
                                     <FormMessage />
                                 </FormItem>
                             )}
                         />
 
-                        <FormField
+                        {/* <FormField
                             control={form.control}
                             name="modelId"
                             render={({ field }) => (
@@ -253,8 +254,8 @@ export function ChatbotForm({ chatbot, currentFiles, models, files, className, .
                                     <FormMessage />
                                 </FormItem>
                             )}
-                        />
-                        <FormField
+                        /> */}
+                        {/* <FormField
                             control={form.control}
                             name="openAIKey"
                             render={({ field }) => (
@@ -274,7 +275,7 @@ export function ChatbotForm({ chatbot, currentFiles, models, files, className, .
                                     <FormMessage />
                                 </FormItem>
                             )}
-                        />
+                        /> */}
                         <FormField
                             control={form.control}
                             name="chatbotErrorMessage"

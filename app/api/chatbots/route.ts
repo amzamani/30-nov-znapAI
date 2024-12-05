@@ -63,7 +63,7 @@ export async function POST(req: Request) {
     const body = chatbotSchema.parse(json)
     body.modelId = "gpt-4o-mini"
     body.openAIKey = process.env.OPEN_AI_KEY
-    console.log(body.openAIKey)
+    // console.log(body.openAIKey)
     let model = await db.chatbotModel.findUnique({
       where: {
         id: body.modelId
