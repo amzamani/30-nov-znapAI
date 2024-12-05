@@ -204,7 +204,7 @@ export default function PageFooter () {
               <nav className="flex flex-col gap-4">
                 <div>
                   <a
-                    href="/terms"
+                    href="https://www.linkedin.com/in/zamanitech/"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Linkedin
@@ -212,7 +212,7 @@ export default function PageFooter () {
                 </div>
                 <div>
                   <a
-                    href="/privacy"
+                    href="https://x.com/znap_in"
                     className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Twitter

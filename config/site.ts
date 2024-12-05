@@ -4,7 +4,7 @@ export const siteConfig: SiteConfig = {
   name: "ZnapAI",
   description:
     "Transform data to dialogue in a Znap.",
-  url: "",
+  url: "https://znapai.com/",
   ogImage: "",
   links: {
     twitter: "https://x.com/znap_in",
