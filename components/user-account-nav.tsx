@@ -44,9 +44,9 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
                 <DropdownMenuItem asChild>
                     <Link href="/dashboard/chatbots">Chatbots</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                {/* <DropdownMenuItem asChild>
                     <Link href="/dashboard/crawlers">Crawlers</Link>
-                </DropdownMenuItem>
+                </DropdownMenuItem> */}
                 <DropdownMenuItem asChild>
                     <Link href="/dashboard/files">Files</Link>
                 </DropdownMenuItem>
@@ -56,9 +56,9 @@ export function UserAccountNav({ user }: UserAccountNavProps) {
                 <DropdownMenuItem asChild>
                     <Link href="/dashboard/settings">Settings</Link>
                 </DropdownMenuItem>
-                <DropdownMenuItem asChild>
+                {/* <DropdownMenuItem asChild>
                     <Link href="/dashboard/onboarding">Onboarding</Link>
-                </DropdownMenuItem>
+                </DropdownMenuItem> */}
                 <DropdownMenuSeparator />
                 <DropdownMenuItem
                     className="cursor-pointer"

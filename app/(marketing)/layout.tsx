@@ -52,7 +52,7 @@ export default function MarketingLayout({
                 "px-4 border shadow-md"
               )}
             >
-              Login
+              Get Started
             </Link>
           </nav>
         </div>

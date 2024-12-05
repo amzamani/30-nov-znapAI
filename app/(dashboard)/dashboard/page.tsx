@@ -148,7 +148,7 @@ export default async function DashboardPage() {
         <ChatbotCreateButton />
       </DashboardHeader>
       <div>
-        {bots === 0 &&
+        {/* {bots === 0 &&
           <div className="mb-4 bg-blue-100 border-l-4 border-blue-500 text-black p-4" role="info">
             <p className="font-bold text-md">Welcome to {siteConfig.name} 🎉</p>
             <p className="text-sm">You are probably new to this platform.</p>
@@ -157,7 +157,7 @@ export default async function DashboardPage() {
             <br />
             <a href="/dashboard/onboarding"><Button><p className="pr-2">Open Onboarding</p>  <Icons.help className="h-4 w-4" /> ‍</Button></a>
           </div>
-        }
+        } */}
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <Card>
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

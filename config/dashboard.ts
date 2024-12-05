@@ -19,21 +19,21 @@ export const dashboardConfig: DashboardConfig = {
             href: "/dashboard/chatbots",
             icon: "bot",
         },
-        {
-            title: "Crawlers",
-            href: "/dashboard/crawlers",
-            icon: "post",
-        },
+        // {
+        //     title: "Crawlers",
+        //     href: "/dashboard/crawlers",
+        //     icon: "post",
+        // },
         {
             title: "Files",
             href: "/dashboard/files",
             icon: "folder",
         },
-        {
-            title: "Exports",
-            href: "/dashboard/exports",
-            icon: "download",
-        },
+        // {
+        //     title: "Exports",
+        //     href: "/dashboard/exports",
+        //     icon: "download",
+        // },
         {
             title: "Billing",
             href: "/dashboard/billing",
