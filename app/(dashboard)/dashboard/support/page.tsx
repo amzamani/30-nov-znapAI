@@ -32,6 +32,14 @@ export default async function SupportPage() {
                 <p className="text-lg font-semibold">How can we help you?</p>
                 <p className="text-muted-foreground">
                     First, before reaching out you can always try our chatbot. He knows a lot about our platform he might be able to help you.
+                    You can reach out to the team directly by clicking { }
+                    <a href="https://api.whatsapp.com/send?phone=917011879175" className="underline underline-offset-1">
+                            
+                                   
+                                   
+                                    here.
+                                
+                                </a>
                        </p>
                 <div className="min-w-[85%] min-h-[15rem] text-left items-left pt-6">
                     <iframe

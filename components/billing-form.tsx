@@ -95,7 +95,7 @@ export function BillingForm({
                 </CardHeader>
                 <CardContent>{subscriptionPlan.description}</CardContent>
                 <CardFooter className="flex flex-col items-start space-y-2 md:flex-row md:justify-between md:space-x-0">
-                    {subscriptionPlan.name !== "FREE" &&
+                    {/* {subscriptionPlan.name !== "FREE" &&
                         <button
                             onClick={(e) => openSession(e, subscriptionPlan.stripePriceId)}
                             className={cn(buttonVariants())}
@@ -106,7 +106,7 @@ export function BillingForm({
                             )}
                             Manage Subscription
                         </button>
-                    }
+                    } */}
                     {subscriptionPlan.name !== "FREE" ? (
                         <p className="rounded-full text-xs font-medium">
                             {subscriptionPlan.isCanceled
@@ -118,8 +118,8 @@ export function BillingForm({
                 </CardFooter>
             </Card>
             <Card className="border-0 shadow-0">
-                <div className="flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 flex-wrap gap-6 mt-8 md:gap-8">
-                    {[freePlan, basicPlan, proPlan].map((plan, i) => {
+                <div className="flex grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 flex-wrap gap-6 mt-8 md:gap-8">
+                    {[freePlan, proPlan].map((plan, i) => {
                         if (plan.name === proPlan.name) {
                             return (
                                 <div key={i} className="hover:shadow-sm relative flex flex-col p-2 bg-white rounded-lg  bg-zinc-850 justify-between border border-purple-500">
@@ -185,14 +185,13 @@ export function BillingForm({
                                             </ul>
                                         </CardContent>
                                         <CardFooter className="mt-auto">
-                                            <Button
-                                                onClick={(e) => openSession(e, plan.stripePriceId)}
-                                                className={cn(buttonVariants())}>
-                                                {isLoading && (
-                                                    <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
-                                                )}
-                                                { plan.name === freePlan.name ? "Start 7 days free trial" : "Upgrade"}
-                                            </Button>
+                                        <a href="https://api.whatsapp.com/send?phone=917011879175">
+                                <Button
+                                   
+                                    className={cn(buttonVariants())}>
+                                    Contact Us
+                                </Button>
+                                </a>
                                         </CardFooter>
                                     </Card>
                                 </div>)
@@ -258,7 +257,7 @@ export function BillingForm({
                                         </ul>
                                     </CardContent>
                                     <CardFooter className="mt-auto">
-                                        {plan.name !== freePlan.name &&
+                                        {/* {plan.name !== freePlan.name &&
                                             <Button
                                                 onClick={(e) => openSession(e, plan.stripePriceId)}
                                                 className={cn(buttonVariants())}>
@@ -267,7 +266,14 @@ export function BillingForm({
                                                 )}
                                                 { plan.name === freePlan.name ? "Start 7 days free trial" : "Upgrade"}
                                             </Button>
-                                        }
+                                        } */}
+                                        <a href="https://api.whatsapp.com/send?phone=917011879175">
+                                            <Button
+
+                                                className={cn(buttonVariants())}>
+                                                Contact Us
+                                            </Button>
+                                        </a>
                                     </CardFooter>
                                 </Card>
                             </div>
@@ -277,7 +283,7 @@ export function BillingForm({
                     {
                         <Card key="enterprise" className="flex flex-col flex-grow">
                             <CardHeader>
-                                <CardTitle>Enterprise</CardTitle>
+                                <CardTitle>Custom</CardTitle>
                                 <CardDescription>$X/month</CardDescription>
                             </CardHeader>
                             <CardContent className="flex flex-col flex-grow">
@@ -300,11 +306,13 @@ export function BillingForm({
                                 </ul>
                             </CardContent>
                             <CardFooter>
-                                <Button
-                                    type="submit"
-                                    className={cn(buttonVariants())}>
-                                    Contact Sales
-                                </Button>
+                                <a href="https://api.whatsapp.com/send?phone=917011879175">
+                                    <Button
+
+                                        className={cn(buttonVariants())}>
+                                        Contact Us
+                                    </Button>
+                                </a>
                             </CardFooter>
                         </Card>
                     }

@@ -9,6 +9,7 @@ import { MainNav } from "@/components/main-nav"
 import { SiteFooter } from "@/components/site-footer"
 import { Background } from "@/components/background"
 import { useEffect, useState } from "react"
+import  PageFooter  from "@/components/page-footer"
 // import { SDKBanner } from "@/components/sdk-banner"
 
 interface MarketingLayoutProps {
@@ -59,7 +60,16 @@ export default function MarketingLayout({
       <main className="flex-1 z-10">
         {children}
       </main>
-      <SiteFooter className="z-40" simpleFooter={false} />
+      <br>
+      </br>
+      <br>
+      </br>
+      <br>
+      </br>
+      <br>
+      </br>
+      {/* <SiteFooter className="z-40" simpleFooter={false} /> */}
+      <PageFooter/>
     </div>
   );
 }

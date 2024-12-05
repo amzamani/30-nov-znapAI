@@ -2,14 +2,14 @@ import { SubscriptionPlan } from "@/types"
 
 export const freePlan: SubscriptionPlan = {
     name: "FREE",
-    description: "The FREE plan is limited to 1 chatbot, 1 crawler, 3 files and 500 messages per month.",
+    description: "The FREE plan is limited to 1 chatbot, 1 crawler, 3 files and 200 messages per month.",
     stripePriceId: "",
 
     maxChatbots: 1,
     maxCrawlers: 1,
     maxFiles: 3,
     unlimitedMessages: false,
-    maxMessagesPerMonth: 500,
+    maxMessagesPerMonth: 200,
     basicCustomization: false,
     userInquiries: false,
 
@@ -81,14 +81,14 @@ export const legacyBasicPlan: SubscriptionPlan = {
 
 export const proPlan: SubscriptionPlan = {
     name: "PRO",
-    description: "The PRO plan has 27 chatbots, 27 crawlers and 81 files and unlimited messages.",
+    description: "The PRO plan has 27 chatbots, 27 crawlers and 81 files and 1000 messages.",
     stripePriceId: process.env.NEXT_PUBLIC_STRIPE_PRO_PRICE_ID || "",
 
     maxChatbots: 27,
     maxCrawlers: 27,
     maxFiles: 81,
-    unlimitedMessages: true,
-    maxMessagesPerMonth: undefined,
+    unlimitedMessages: false,
+    maxMessagesPerMonth: 1000,
     basicCustomization: true,
     userInquiries: true,
 
@@ -96,5 +96,5 @@ export const proPlan: SubscriptionPlan = {
     chatFileAttachments: true,
     brandingCustomization: true,
 
-    price: 27,
+    price: 10,
 }

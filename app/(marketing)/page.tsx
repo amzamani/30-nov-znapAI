@@ -46,9 +46,7 @@ export default function IndexPage() {
           <Image data-aos="zoom-in" priority={false} className="mt-10 border shadow-lg" src="/dashboard.png" width={810} height={540} alt="Dashboard" />
         </div>
       </section>
-      <section>
-        <FeatureSection/>
-      </section>
+      
       <section data-aos="fade-up" id="chat" className="container py-12 md:py-24 lg:py-32">
         <div className="mx-auto flex max-w-[58rem] flex-col items-center justify-center gap-4 text-center">
           <h2 className="font-heading text-3xl leading-[1.1] sm:text-3xl md:text-6xl">
@@ -336,6 +334,9 @@ export default function IndexPage() {
           </div>
         </div>
       </section> */}
+      <section>
+        <FeatureSection/>
+      </section>
     </>
   );
 }
