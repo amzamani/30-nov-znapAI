@@ -6,10 +6,10 @@ import { DashboardNav } from "@/components/nav"
 import { SiteFooter } from "@/components/site-footer"
 import { UserAccountNav } from "@/components/user-account-nav"
 import { db } from "@/lib/db"
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
-import { OpenAIForm } from "@/components/openai-config-form"
-import Image from "next/image"
-import { toast } from "@/components/ui/use-toast"
+// import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+// import { OpenAIForm } from "@/components/openai-config-form"
+// import Image from "next/image"
+// import { toast } from "@/components/ui/use-toast"
 
 interface DashboardLayoutProps {
     children?: React.ReactNode
@@ -43,17 +43,11 @@ export default async function DashboardLayout({
                 },
             });
     
-            toast({
-                description: "Your account has been set up.",
-            });
+            
         } catch (error) {
-            console.error("Error inserting OpenAI key:", error);
+            console.error("Error in account setup", error);
     
-            toast({
-                title: "Something went wrong.",
-                description: "Please try logging out and logging in again.",
-                variant: "destructive",
-            });
+            console.log("dev check layout")
         }
     }
     

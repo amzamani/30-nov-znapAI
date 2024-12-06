@@ -14,7 +14,7 @@ import { Icons } from "@/components/icons"
 import { Button, buttonVariants } from "@/components/ui/button"
 import { formatDate } from "@/lib/utils"
 import { toast } from "@/components/ui/use-toast"
-import { freePlan, basicPlan, proPlan } from "@/config/subscriptions"
+import { freePlan, proPlan } from "@/config/subscriptions"
 import { siteConfig } from "@/config/site"
 import { eventGA } from "@/lib/googleAnalytics"
 import { UserSubscriptionPlan } from "@/types"
@@ -64,9 +64,7 @@ export function BillingForm({
 
         // get plan from priceId
         let plan = freePlan
-        if (priceId === basicPlan.stripePriceId) {
-            plan = basicPlan
-        } else if (priceId === proPlan.stripePriceId) {
+        if (priceId === proPlan.stripePriceId) {
             plan = proPlan
         }
 
@@ -136,9 +134,9 @@ export function BillingForm({
                                                 <li className="flex items-center">
                                                     - {plan.maxChatbots} Chatbots
                                                 </li>
-                                                <li className="flex items-center">
+                                                {/* <li className="flex items-center">
                                                     - {plan.maxCrawlers} Crawlers
-                                                </li>
+                                                </li> */}
                                                 <li className="flex items-center">
                                                     - {plan.maxFiles} Files
                                                 </li>
@@ -185,13 +183,13 @@ export function BillingForm({
                                             </ul>
                                         </CardContent>
                                         <CardFooter className="mt-auto">
-                                        <a href="https://api.whatsapp.com/send?phone=917011879175">
-                                <Button
-                                   
-                                    className={cn(buttonVariants())}>
-                                    Contact Us
-                                </Button>
-                                </a>
+                                            <a href="https://api.whatsapp.com/send?phone=917011879175" target="_blank">
+                                                <Button
+
+                                                    className={cn(buttonVariants())}>
+                                                    Contact Us
+                                                </Button>
+                                            </a>
                                         </CardFooter>
                                     </Card>
                                 </div>)
@@ -208,9 +206,9 @@ export function BillingForm({
                                             <li className="flex items-center">
                                                 - {plan.maxChatbots} Chatbots
                                             </li>
-                                            <li className="flex items-center">
+                                            {/* <li className="flex items-center">
                                                 - {plan.maxCrawlers} Crawlers
-                                            </li>
+                                            </li> */}
                                             <li className="flex items-center">
                                                 - {plan.maxFiles} Files
                                             </li>
@@ -267,7 +265,7 @@ export function BillingForm({
                                                 { plan.name === freePlan.name ? "Start 7 days free trial" : "Upgrade"}
                                             </Button>
                                         } */}
-                                        <a href="https://api.whatsapp.com/send?phone=917011879175">
+                                        <a href="https://api.whatsapp.com/send?phone=917011879175" target="_blank">
                                             <Button
 
                                                 className={cn(buttonVariants())}>
@@ -291,9 +289,9 @@ export function BillingForm({
                                     <li className="flex items-center">
                                         - X Chatbots
                                     </li>
-                                    <li className="flex items-center">
+                                    {/* <li className="flex items-center">
                                         - X Crawlers
-                                    </li>
+                                    </li> */}
                                     <li className="flex items-center">
                                         -  X Files
                                     </li>
@@ -306,7 +304,7 @@ export function BillingForm({
                                 </ul>
                             </CardContent>
                             <CardFooter>
-                                <a href="https://api.whatsapp.com/send?phone=917011879175">
+                                <a href="https://api.whatsapp.com/send?phone=917011879175" target="_blank">
                                     <Button
 
                                         className={cn(buttonVariants())}>

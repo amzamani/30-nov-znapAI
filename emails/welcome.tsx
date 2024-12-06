@@ -42,14 +42,14 @@ export default function WelcomeEmail({ name }: WelcomeEmailProps) {
                             need assistance, feel free to reach out.
                         {/* </Text> */}
                         {/* <Text> */}
-                            You can contact us directly with the email openassistantgpt@gmail.com
+                            You can contact us directly with the email contact@znap.in
                         {/* </Text> */}
                         {/* <Section className="text-center mt-[32px] mb-[32px]"> */}
                             {/* <Button
                                 className="p-2 bg-[#00A3FF] rounded text-white text-xs font-semibold no-underline text-center"
                                 href={`${siteConfig.url}dashboard/onboarding`}
                             > */}
-                                Get Started
+                                {/* Get Started */}
                             {/* </Button> */}
                         {/* </Section> */}
                         {/* <Text className="text-sm"> */}
@@ -58,9 +58,9 @@ export default function WelcomeEmail({ name }: WelcomeEmailProps) {
                             The {siteConfig.name} Team
                         {/* </Text> */}
                         {/* <Text className="text-center text-gray-400"> */}
-                            You are subscribed to the marketing emails. To manage your communication preferences, click 
+                            {/* You are subscribed to the marketing emails. To manage your communication preferences, click  */}
                             {/* <Link className="underline text-gray-400" href={`${siteConfig.url}dashboard/settings`}> */}
-                                here
+                                {/* here */}
                             {/* </Link> */}
                         {/* </Text> */}
                     {/* </Container> */}
