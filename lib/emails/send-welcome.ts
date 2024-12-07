@@ -8,7 +8,7 @@ export async function sendWelcomeEmail({ name, email }: { name: string | null | 
     try {
         // Send the email using the Resend API
         await EmailClient.emails.send({
-            from: "ZnapAI <contact@toffeemoney.com>",
+            from: `ZnapAI  ${siteConfig.sendingMail}`,
             to: email as string,
             subject: `Welcome to ${siteConfig.name}!`,
             react: emailTemplate,

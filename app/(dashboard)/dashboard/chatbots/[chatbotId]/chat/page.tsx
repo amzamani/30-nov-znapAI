@@ -9,6 +9,7 @@ import { DashboardShell } from "@/components/shell"
 import { buttonVariants } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
 import { Icons } from "@/components/icons"
+import { siteConfig } from "@/config/site"
 
 interface ChatbotSettingsProps {
     params: { chatbotId: string }
@@ -53,6 +54,18 @@ export default async function ChatbotPage({ params }: ChatbotSettingsProps) {
                     </>
                 </Link>
             </DashboardHeader>
+            <div className="mb-6 text-center">
+                <span className="text-gray-700">
+                    Open in fullscreen in a new window, by clicking{" "}
+                    <Link
+                        href={`${siteConfig.url}embed/${chatbot.id}/window?chatbox=false`}
+                        target="_blank"
+                        className="underline text-blue-600 hover:text-blue-800"
+                    >
+                        here
+                    </Link>
+                </span>
+            </div>
             <div className="h-svh">
                 <iframe
                     src={`/embed/${chatbot.id}/window?chatbox=false`}
