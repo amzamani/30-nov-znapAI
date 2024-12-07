@@ -86,14 +86,17 @@ export async function PATCH(
   const body = await req.json()
   const payload = chatbotSchema.parse(body)
 
-  try {
-    const openaiTest = new OpenAI({
-      apiKey: payload.openAIKey
-    })
-    await openaiTest.models.list()
-  } catch (error) {
-    return new Response("Invalid OpenAI API key", { status: 400, statusText: "Invalid OpenAI API key" })
-  }
+  // try {
+  //   const openaiTest = new OpenAI({
+  //     apiKey: payload.openAIKey
+  //   })
+  //   await openaiTest.models.list()
+  // } catch (error) {
+  //   return new Response("Invalid OpenAI API key", { status: 400, statusText: "Invalid OpenAI API key" })
+  // }
+
+  payload.modelId = "gpt-4o-mini"
+  payload.openAIKey = process.env.OPEN_AI_KEY
 
   try {
     const chatbot = await db.chatbot.update({

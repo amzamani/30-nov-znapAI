@@ -74,7 +74,7 @@ export function ChatbotForm({ chatbot, currentFiles, models, files, className, .
     }
 
     async function onSubmit(data: FormData) {
-        console.log(data)
+        // console.log(data)
         setIsSaving(true)
 
         const response = await fetch(`/api/chatbots/${chatbot.id}`, {
@@ -84,8 +84,6 @@ export function ChatbotForm({ chatbot, currentFiles, models, files, className, .
             },
             body: JSON.stringify({
                 name: data.name,
-                openAIKey: data.openAIKey,
-                modelId: data.modelId,
                 welcomeMessage: data.welcomeMessage,
                 chatbotErrorMessage: data.chatbotErrorMessage,
                 prompt: data.prompt,
