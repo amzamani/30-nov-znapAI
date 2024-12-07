@@ -28,7 +28,7 @@ export default function PageFooter () {
                 </a>
               </div>
               {/* logo - end */}
-              <p className="mb-6 text-gray-500 sm:pr-8">
+              <p className="mb-6 text-black sm:pr-8">
               Transform Data into Dialogue
 
               </p>
@@ -37,7 +37,7 @@ export default function PageFooter () {
                 <a
                   href="#"
                   target="_blank"
-                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                  className="text-gray-400 transition duration-100 hover:text-black active:text-gray-600"
                 >
                   <svg
                     className="h-5 w-5"
@@ -53,7 +53,7 @@ export default function PageFooter () {
                 <a
                   href="#"
                   target="_blank"
-                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                  className="text-gray-400 transition duration-100 hover:text-black active:text-gray-600"
                 >
                   <svg
                     className="h-5 w-5"
@@ -69,7 +69,7 @@ export default function PageFooter () {
                 <a
                   href="#"
                   target="_blank"
-                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                  className="text-gray-400 transition duration-100 hover:text-black active:text-gray-600"
                 >
                   <svg
                     className="h-5 w-5"
@@ -85,7 +85,7 @@ export default function PageFooter () {
                 <a
                   href="#"
                   target="_blank"
-                  className="text-gray-400 transition duration-100 hover:text-gray-500 active:text-gray-600"
+                  className="text-gray-400 transition duration-100 hover:text-black active:text-gray-600"
                 >
                   <svg
                     className="h-5 w-5"
@@ -110,7 +110,7 @@ export default function PageFooter () {
                 <div>
                   <a
                     href="#"
-                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Overview
                   </a>
@@ -118,7 +118,7 @@ export default function PageFooter () {
                 <div>
                   <a
                     href="#"
-                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Solutions
                   </a>
@@ -126,7 +126,7 @@ export default function PageFooter () {
                 <div>
                   <a
                     href="#"
-                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Pricing
                   </a>
@@ -134,7 +134,7 @@ export default function PageFooter () {
                 <div>
                   <a
                     href="#"
-                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Customers
                   </a>
@@ -151,7 +151,7 @@ export default function PageFooter () {
                 <div>
                   <a
                     href="https://znap.in/about"
-                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     About
                   </a>
@@ -159,7 +159,7 @@ export default function PageFooter () {
                 <div>
                   <a
                     href="https://znap.in/contact"
-                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Contact
                   </a>
@@ -177,7 +177,7 @@ export default function PageFooter () {
               <div>
                   <a
                     href="/login"
-                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     ZnapAI
                   </a>
@@ -185,7 +185,7 @@ export default function PageFooter () {
                 <div>
                   <a
                     href="https://csv.askfromdata.com"
-                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     AskFromData
                   </a>
@@ -205,7 +205,7 @@ export default function PageFooter () {
                 <div>
                   <a
                     href="https://www.linkedin.com/in/zamanitech/"
-                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Linkedin
                   </a>
@@ -213,7 +213,7 @@ export default function PageFooter () {
                 <div>
                   <a
                     href="https://x.com/znap_in"
-                    className="text-gray-500 transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Twitter
                   </a>

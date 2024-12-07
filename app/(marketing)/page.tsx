@@ -6,7 +6,6 @@ import Image from "next/image";
 import { siteConfig } from "@/config/site";
 import { Icons } from "@/components/icons";
 import { FAQ } from '@/components/faq';
-import { freePlan, basicPlan, proPlan } from "@/config/subscriptions";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FeatureSection } from "@/components/ways"
@@ -27,8 +26,7 @@ export default function IndexPage() {
           Transform Data into Dialogue
           </h1>
           <p className="max-w-[42rem] leading-normal text-muted-foreground sm:text-xl sm:leading-8">
-          Provide personalised answers to your user&apos;s data questions with AI.
-          </p>
+          Build custom chatbot trained on custom data, use it for yourself or embed it on your website.          </p>
           <div className="space-x-4 space-y-4">
             <Link href="/login" className={cn(buttonVariants({ size: "lg" }))}>
               {/* <Icons.bot className="h-4 w-4 mr-2"></Icons.bot> */}
@@ -45,6 +43,9 @@ export default function IndexPage() {
           </div>
           <Image data-aos="zoom-in" priority={false} className="mt-10 border shadow-lg" src="/dashboard.png" width={810} height={540} alt="Dashboard" />
         </div>
+      </section>
+      <section>
+        <FeatureSection/>
       </section>
       
       <section data-aos="fade-up" id="chat" className="container py-12 md:py-24 lg:py-32">
@@ -70,7 +71,7 @@ export default function IndexPage() {
             Features
           </h2>
           <p className="max-w-[85%] leading-normal text-muted-foreground sm:text-lg sm:leading-7">
-            Build your own chatbot easily.
+            Build your custom chatbot easily.
           </p>
         </div>
         <div className="mx-auto grid justify-center gap-4 sm:grid-cols-2 md:max-w-[64rem] md:grid-cols-3 mt-6">
@@ -91,7 +92,7 @@ export default function IndexPage() {
               <div className="space-y-2">
                 <h3 className="font-bold">Easy integration</h3>
                 <p className="text-sm">
-                  Only include few lines of code in your website to make the chatbot work.
+                  Only include few lines of code in your website to embed the chatbot.
                 </p>
               </div>
             </div>
@@ -135,7 +136,7 @@ export default function IndexPage() {
               <div className="space-y-2">
                 <h3 className="font-bold">File Attachments</h3>
                 <p className="text-sm">
-                  You can attach a file CSV, XML, Images etc... in the chat and the chatbot will analyse it.
+                  You can attach a file CSV, PDF, TXT etc... in the chat and the chatbot will analyse it.
                 </p>
               </div>
             </div>
@@ -334,9 +335,7 @@ export default function IndexPage() {
           </div>
         </div>
       </section> */}
-      <section>
-        <FeatureSection/>
-      </section>
+     
     </>
   );
 }

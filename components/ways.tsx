@@ -5,7 +5,7 @@ const features = [
   {
     category: "Dive into your data",
     title: "Internal Chat",
-    description: "Chat with your data to get all the information you need like answers, summaries and reports.",
+    description: "Create an AI-powered knowledge base, and get instant answer to any question.",
     buttonText: "Try Chat",
     icon: <MessageSquare className="w-4 h-4 ml-2" />,
     link: "https://csv.askfromdata.com/",
@@ -20,7 +20,7 @@ const features = [
   {
     category: "Assist your users",
     title: "Website Widget",
-    description: "Embed your chatbot into your website to support your customers. A 24/7 tireless support agent.",
+    description: "Embed your chatbot into your website to support your customers. A 24/7 tireless AI agent.",
     buttonText: "Embed Widget",
     icon: <Globe className="w-4 h-4 ml-2" />,
     link: "/login",
@@ -31,7 +31,7 @@ export function FeatureSection() {
   return (
     <section className="py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
-        <h2 className="text-4xl font-bold text-center mb-16">Use cases of ZnapAI</h2>
+        <h2 className="text-4xl font-bold text-center mb-16">Use Case</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 md:gap-12">
           {features.map((feature, index) => (
             <div key={index} className="flex flex-col h-full">
@@ -44,12 +44,12 @@ export function FeatureSection() {
                 <p className="text-gray-600 mb-6">{feature.description}</p>
               </div>
               <div className="mt-auto">
-                <Button variant="link" className="p-0 h-auto font-semibold">
+                {/* <Button variant="link" className="p-0 h-auto font-semibold">
                   <a href={feature.link}>
                     {feature.buttonText}
 
                   </a>
-                </Button>
+                </Button> */}
               </div>
             </div>
           ))}

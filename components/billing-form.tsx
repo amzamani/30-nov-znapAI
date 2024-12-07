@@ -299,6 +299,9 @@ export function BillingForm({
                                         - Unlimited Messages
                                     </li>
                                     <li className="flex items-center">
+                                        - API access
+                                    </li>
+                                    <li className="flex items-center">
                                         - All Feature from other plans
                                     </li>
                                 </ul>
