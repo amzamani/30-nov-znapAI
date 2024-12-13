@@ -25,6 +25,7 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import Select from 'react-select';
 import { Textarea } from "@/components/ui/textarea"
 import { Switch } from "./ui/switch"
+import Link from 'next/link'
 
 interface ChatbotFormProps extends React.HTMLAttributes<HTMLFormElement> {
     chatbot: Pick<Chatbot, "id" | "name" | "openaiKey" | "modelId" | "createdAt" | "welcomeMessage" | "prompt" | "chatbotErrorMessage" | "isImported" | "rightToLeftLanguage">
@@ -188,7 +189,7 @@ export function ChatbotForm({ chatbot, currentFiles, models, files, className, .
                                         id="prompt"
                                     />
                                     <FormDescription>
-                                    The prompt that will be sent to AI for every messages, here&apos;s an example: "You are an assistant you help users that visit our website, keep it short, always refer to the documentation provided and never ask for more information."
+                                        The prompt that will be sent to AI for every messages, here&apos;s an example: "You are an assistant you help users that visit our website, keep it short, always refer to the documentation provided and never ask for more information."
 
 
                                     </FormDescription>
@@ -217,9 +218,14 @@ export function ChatbotForm({ chatbot, currentFiles, models, files, className, .
                                     />
 
                                     <FormDescription>
-                                    The AI will use this file to search for specific content.
-                                    If you don&apos;t have a file yet, it is because you haven&apos;t uploaded any file.
+                                        The AI will use this file to search for specific content.
+                                        If you don&apos;t have a file yet, it is because you haven&apos;t uploaded any file.
+                                        <br />
+                                        <Link href="/dashboard/files" className="text-blue-500 hover:underline">
+                                            Click here to upload your file.
+                                        </Link>
                                     </FormDescription>
+
                                     <FormMessage />
                                 </FormItem>
                             )}
@@ -304,7 +310,7 @@ export function ChatbotForm({ chatbot, currentFiles, models, files, className, .
                                     </FormLabel>
                                     <FormDescription>
                                         If your chatbot default language is right to left, enable this option. This will change the chatbot layout to support right to left languages.
-                                        <br/>
+                                        <br />
                                         Example of right to left languages: Arabic, Hebrew, Persian, Urdu, etc.
                                     </FormDescription>
                                     <FormControl>

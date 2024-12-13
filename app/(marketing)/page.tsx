@@ -104,7 +104,7 @@ export default function IndexPage() {
           </p>
           <div className="min-w-[85%] min-h-[15rem] text-left items-left pt-6">
             <iframe
-              src="/embed/cm478imy10001ui4zdt780050/window?chatbox=false"
+              src="/embed/cm4mp4qhh000384g4gjeu26zg/window?chatbox=false"
               className="overflow-hidden border border-1 rounded-lg shadow-lg w-full h-[65vh]"
               allowFullScreen allow="clipboard-read; clipboard-write"
             ></iframe>

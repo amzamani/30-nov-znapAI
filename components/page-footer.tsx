@@ -150,7 +150,7 @@ export default function PageFooter () {
               <nav className="flex flex-col gap-4">
                 <div>
                   <a
-                    href="https://znap.in/about"
+                    href="https://znap.in/about" target="_blank"
                     className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     About
@@ -158,7 +158,23 @@ export default function PageFooter () {
                 </div>
                 <div>
                   <a
-                    href="https://znap.in/contact"
+                    href="https://znapai.com/privacy" target="_blank"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                  >
+                    Privacy Policy
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://znapai.com/terms" target="_blank"
+                    className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
+                  >
+                    Terms of Use
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://znap.in/contact" target="_blank"
                     className="text-black transition duration-100 hover:text-indigo-500 active:text-indigo-600"
                   >
                     Contact

@@ -43,7 +43,7 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
             prompt: "You are an assistant you help users that visit our website, keep it short, always refer to the documentation provided and never ask for more information.",
             chatbotErrorMessage: "Oops! An error has occurred. If the issue persists, feel free to reach out to our support team for assistance. We're here to help!",
             modelId: "",
-            openAIKey : ""
+            openAIKey: ""
         }
     })
 
@@ -158,8 +158,8 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
     async function onSubmit(data: FormData) {
         setIsSaving(true);
         console.log("Form submitted with data:", data);
-        
-    
+
+
         try {
             const response = await fetch(`/api/chatbots`, {
                 method: "POST",
@@ -174,9 +174,9 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
                     files: data.files,
                 }),
             });
-    
+
             console.log("Response status:", response.status);
-    
+
             if (!response.ok) {
                 const errorText = await response.text();
                 console.error("Error response:", errorText);
@@ -186,14 +186,14 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
                     variant: "destructive",
                 });
             }
-    
+
             toast({ description: "Your chatbot has been saved." });
             eventGA({
                 action: "chatbot_created",
                 label: "Chatbot Created",
                 value: data.name,
             });
-    
+
             const result = await response.json();
             router.refresh();
             if (!isOnboarding) {
@@ -210,7 +210,7 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
             setIsSaving(false);
         }
     }
-    
+
 
     return (
         <Form {...form}>
@@ -302,7 +302,12 @@ export function NewChatbotForm({ isOnboarding, className, ...props }: NewChatbot
                                     <FormDescription>
                                         The AI will use this file to search for specific content.
                                         If you don&apos;t have a file yet, it is because you haven&apos;t uploaded any file.
+                                        <br />
+                                        <Link href="/dashboard/files" className="text-blue-500 hover:underline">
+                                            Click here to upload your file.
+                                        </Link>
                                     </FormDescription>
+
                                     <FormMessage />
                                 </FormItem>
                             )}
