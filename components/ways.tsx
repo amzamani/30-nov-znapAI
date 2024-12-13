@@ -20,7 +20,7 @@ const features = [
   {
     category: "Assist your users",
     title: "Website Widget",
-    description: "Embed your chatbot into your website to support your customers. A 24/7 tireless AI agent.",
+    description: "Embed your chatbot into your website to assist your customers. A 24/7 tireless AI agent.",
     buttonText: "Embed Widget",
     icon: <Globe className="w-4 h-4 ml-2" />,
     link: "/login",

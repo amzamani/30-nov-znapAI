@@ -36,7 +36,7 @@ export default function MarketingLayout({
 
   return (
     <div className="flex min-h-screen flex-col">
-      <Background />
+      {/* <Background /> */}
       <header
         className={`z-40 ${isHeaderTransparent ? "bg-transparent" : "bg-white/75 backdrop-blur-lg border-b"
           } sticky inset-x-0 top-0 w-full transition-all duration-1000`}
@@ -48,7 +48,7 @@ export default function MarketingLayout({
             <Link
               href="/login"
               className={cn(
-                buttonVariants({ variant: "secondary", size: "sm" }),
+                buttonVariants({ variant: "outline", size: "sm" }),
                 "px-4 border shadow-md"
               )}
             >
